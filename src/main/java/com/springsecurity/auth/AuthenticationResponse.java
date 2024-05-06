@@ -13,6 +13,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class AuthenticationResponse {
 	
+	//After registration or login.. We will be getting this access token 
+	// which will further be used for authorization
+	
+	
 	@JsonProperty("access_token")
 	private String accessToken;
 	

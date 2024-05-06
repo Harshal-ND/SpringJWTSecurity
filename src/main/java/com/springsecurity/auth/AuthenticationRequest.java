@@ -9,7 +9,9 @@ import lombok.Data;
 @AllArgsConstructor
 //@NoArgsConstructor
 public class AuthenticationRequest {
-	
+
+	// this is for logging purpose
+
 	private String email;
 	private String password;
 

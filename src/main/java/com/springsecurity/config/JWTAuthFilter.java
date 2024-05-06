@@ -17,6 +17,7 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.validation.constraints.NotNull;
 
 @Component
 public class JWTAuthFilter extends OncePerRequestFilter {
@@ -28,7 +29,7 @@ public class JWTAuthFilter extends OncePerRequestFilter {
 	private  UserDetailsService userDetailsService;
 	 
 	@Override
-	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
+	protected void doFilterInternal(@NotNull HttpServletRequest request,@NotNull HttpServletResponse response,@NotNull FilterChain filterChain)
 			throws ServletException, IOException {
 		 //Verify whether request has Authorization header and it has Bearer in it
         final String authHeader = request.getHeader("Authorization");
